@@ -1,12 +1,45 @@
 /* 120 pixels in height Full width of the viewport #4056A1 as its default background colour #FFFFFF as its default font colour <span>within the <nav>uses Bungee as its default font-family 1.5ems of space on the right and left between the content and the edges */
 
-nav {
-  height: 120px;
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  /* height: 120px; */
   background-color: #4056a1;
   color: #FFFFFF;
 }
-nav span {
+
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  min-width: 100%;
+  color: #ea3306;
+  padding: 1em;
+  position: relative;
+  z-index: 2;
+  }
+
+.title {
+  display: flex;
+  justify-content: flex-start;
   font-family: 'Bungee';
+  color: white;
   height: 1.5em;
   width: 1.5em;
+}
+.tweeting {
+  display: flex;
+  justify-content: flex-end;
+  font-family: 'Source Sans Pro';
+  color: white;
+}
+
+.right-items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
