@@ -20,6 +20,7 @@ article {
 article header span {
   display: flex;
   align-self: flex-start;
+  padding: 2%;
 }
 
 footer {
