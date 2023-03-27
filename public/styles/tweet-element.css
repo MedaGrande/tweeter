@@ -1,33 +1,62 @@
-article {
-  width: 750px;
-  height: auto;
-  border-style: solid;
-  border-width: 3px;
+.tweet-element {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
-.tweet {
+article {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  height: 200px;
-  border-block-end: 3px solid #181614;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 250px;
+  padding: 1rem;
+  margin: 1rem;
+  border-style: solid;
+}
+
+.tweet-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+}
+textarea {
+  width: 100%;
+  height: auto;
+  font-family: 'Source Sans Pro';
+  background-color: #f4f1ec;
+  border-right-style: none;
+  border-left-style: none;
+  border-top-style: none;
+  border-bottom-style: none;
+}
+.avatar {
+  width: 80px;
+  height: 100%;
 }
 .statement {
   display: flex;
   align-self: center;
+  width: 100%;
 }
 
-article header span {
-  display: flex;
-  align-self: flex-start;
-  padding: 2%;
+.line {
+  width: 90%;
+  height: 2px;
+  background-color: black;
 }
 
 footer {
   display: flex;
-  flex-direction: row;
-  height: 50px;
   justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   
 }
 footer p span{

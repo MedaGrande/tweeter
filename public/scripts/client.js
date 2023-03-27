@@ -30,32 +30,40 @@ const tweetData = [
 ]
 
 const createTweetElement = function (tweetData) {
-  let tweetHTML = `<article>
-          <header class="tweet">
-            <span><img src="${tweetData.user.avatars}"></img> ${tweetData.name}</span>
-            <p class="statement">${tweetData.content}</p>
-            <span class="handle">${tweetData.handle}</span>
+  const tweetHTML = `<article>
+          <header class="tweet-header"> 
+            <div> 
+              <img class="avatar" alt='profile-picture' src='${tweetData.user.avatars}' /> 
+              ${tweetData.user.name}
+            </div>
+            <h3>${tweetData.user.handle}</h3>
           </header>
+          <textarea>${tweetData.content.text}</textarea>
+          <div class="line"></div>
           <footer>
-            <span>${tweetData.created_at}</span>
+              <span>${tweetData.created_at}</span>
               <div class="icons">
-                <i id="flag" class="fa-solid fa-flag" ></i>
+                <i id="flag" class="fa-solid fa-flag"></i>
                 <i id="retweet" class="fa-solid fa-retweet"></i> 
                 <i id="heart" class="fa-solid fa-heart"></i>
               </div>
           </footer>
         </article>`;
-  console.log(tweetHTML);
+  
+      return tweetHTML
 }
 
 const renderTweets = function (tweets) {
-  let tweetsContainer = $(".tweet-element").html("");
-  
+  // let tweetsContainer = $(".tweet-element").html("");
+  const section = $('.tweet-element')
   for (const data of tweets) {
-    let tweetElement = createTweetElement(data)
+    const tweetElement = createTweetElement(data)
     // console.log(tweetElement);
-    tweetsContainer.prepend(tweetElement);
+    section.append(tweetElement);
   }
 }
+
+$(document).ready(function() {
+  renderTweets(tweetData)
+})
 //renderTweets();
-createTweetElement(tweetData);
