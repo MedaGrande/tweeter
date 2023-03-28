@@ -10,11 +10,18 @@ $(document).ready(function () {
   $(".tweet-form").submit(function (event) {
     event.preventDefault();
     const serializedTweet = $(this).serialize();
-    $.post("/tweets", serializedTweet)
-      .then(() => {
-        loadTweets();
-        // $("tweet-text")[0].reset();
-      })
+    if ($("#tweet-text").val() === "") {
+      alert("You cannot submit an empty tweet!")
+    }
+    else if ($("#count-down").val() < 0) {
+      alert("Tweet should not exceed 140 characters!")
+    } else {
+      $.post("/tweets", serializedTweet)
+        .then(() => {
+          loadTweets();
+          $("#tweet-text").val("");
+        })
+    }
   });
 
 })
