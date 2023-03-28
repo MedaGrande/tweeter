@@ -4,33 +4,10 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-const tweetData = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1679610690713
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd"
-    },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1679697090713
-  }
-]
+$(document).ready(function () {
 
-const createTweetElement = function (tweetData) {
-  const tweetHTML = `<article>
+  const createTweetElement = function (tweetData) {
+    const tweetHTML = `<article>
           <header class="tweet-header"> 
             <div> 
               <img class="avatar" alt='profile-picture' src='${tweetData.user.avatars}' /> 
@@ -42,6 +19,8 @@ const createTweetElement = function (tweetData) {
           <div class="line"></div>
           <footer>
               <span>${tweetData.created_at}</span>
+              <time class="timeago" datetime="2019-11-27T09:24:17Z">November 27, 2019</time>
+              $("time.timeago").timeago();
               <div class="icons">
                 <i id="flag" class="fa-solid fa-flag"></i>
                 <i id="retweet" class="fa-solid fa-retweet"></i> 
@@ -49,21 +28,36 @@ const createTweetElement = function (tweetData) {
               </div>
           </footer>
         </article>`;
-  
-      return tweetHTML
-}
 
-const renderTweets = function (tweets) {
-  // let tweetsContainer = $(".tweet-element").html("");
-  const section = $('.tweet-element')
-  for (const data of tweets) {
-    const tweetElement = createTweetElement(data)
-    // console.log(tweetElement);
-    section.append(tweetElement);
+    return tweetHTML
   }
-}
 
-$(document).ready(function() {
-  renderTweets(tweetData)
+  const renderTweets = function (tweets) {
+
+    const section = $('.tweet-element')
+    for (const data of tweets) {
+      const tweetElement = createTweetElement(data)
+
+      section.prepend(tweetElement);
+    }
+  }
+
+  const loadTweets = function () {
+    $.ajax('/tweets', { method: 'GET' })
+      .then(function (tweets) {
+        renderTweets(tweets);
+      });
+  };
+
+  $(".tweet-form").submit(function (event) {
+    event.preventDefault();
+    const serializedTweet = $(this).serialize();
+    $.post("/tweets", serializedTweet)
+      .then(() => {
+        loadTweets();
+        // $("tweet-text")[0].reset();
+      })
+    
+  });
+
 })
-//renderTweets();
