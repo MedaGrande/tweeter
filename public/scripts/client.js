@@ -6,20 +6,28 @@
 
 $(document).ready(function () {
   loadTweets();
-  
+  $("#tweet-check").hide();
+  $("#char-check").hide();
+
   $(".tweet-form").submit(function (event) {
     event.preventDefault();
     const serializedTweet = $(this).serialize();
     if ($("#tweet-text").val() === "") {
-      alert("You cannot submit an empty tweet!")
+      $("#tweet-check").show();
+      $("#tweet-check").html("**Empty tweets cannot be submitted!");
+      $("#tweet-check").css("color", "red");
     }
     else if ($("#count-down").val() < 0) {
-      alert("Tweet should not exceed 140 characters!")
+      $("#char-check").show();
+      $("#char-check").html("**Tweet should not exceed 140 characters!");
+      $("#char-check").css("color", "red");
     } else {
       $.post("/tweets", serializedTweet)
         .then(() => {
           loadTweets();
           $("#tweet-text").val("");
+          $("#tweet-check").hide();
+          $("#char-check").hide();
         })
     }
   });

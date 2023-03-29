@@ -37,3 +37,10 @@ font-family: 'Bungee';
   justify-content: space-between;
   width: 100%;
 }
+
+#tweet-check {
+  color: red;
+}
+#char-check {
+  color: red;
+}
