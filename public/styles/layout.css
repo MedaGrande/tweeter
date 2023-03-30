@@ -42,3 +42,15 @@ main {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+ @media only screen and (min-width: 1024px) { 
+  .content-container {
+    display: flex;
+    margin-top: 140px;
+    margin-right: 100px;
+    margin-left: 30px;
+  }
+  .header {
+    margin-right: 20px;
+  }
+ }
