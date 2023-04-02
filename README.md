@@ -21,4 +21,13 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Media
 
-- The app is developed for both desktop and mobile devices.
+- The app is developed for both desktop and mobile views.
+
+## Screenshots
+
+![Screenshot of desktop view](https://github.com/MedaGrande/tweeter/blob/master/docs/desktop%20view.png)
+![Screenshot of mobile view](https://github.com/MedaGrande/tweeter/blob/master/docs/mobile%20view.png)
+![Screenshot of tweet box](https://github.com/MedaGrande/tweeter/blob/master/docs/tweet%20box.png)
+![Screenshot of tweets](https://github.com/MedaGrande/tweeter/blob/master/docs/tweets%20preview.png)
+![Screenshot depicting error message for empty tweets](https://github.com/MedaGrande/tweeter/blob/master/docs/empty%20tweets.png)
+![Screenshot depicting error message for exceeding characters](https://github.com/MedaGrande/tweeter/blob/master/docs/character%20exceeding.png)
