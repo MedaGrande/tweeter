@@ -27,7 +27,7 @@ nav {
   padding: 1em;
   position: relative;
   z-index: 2;
-  }
+}
 
 .title {
   display: flex;
@@ -37,6 +37,7 @@ nav {
   height: 1.5em;
   width: 1.5em;
 }
+
 .tweeting {
   display: flex;
   justify-content: flex-end;

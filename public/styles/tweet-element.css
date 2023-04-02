@@ -25,6 +25,7 @@ article {
   height: 100px;
   width: 100%;
 }
+
 textarea {
   width: 100%;
   height: auto;
@@ -35,10 +36,12 @@ textarea {
   border-top-style: none;
   border-bottom-style: none;
 }
+
 .avatar {
   width: 80px;
   height: 100%;
 }
+
 .statement {
   display: flex;
   align-self: center;
@@ -57,8 +60,8 @@ footer {
   justify-content: center;
   align-items: center;
   width: 100%;
-  
 }
+
 footer p span{
   font-size: 18px;
 }
@@ -81,9 +84,11 @@ article:hover {
 #flag:hover {
   color: rgb(212, 191, 52);
 }
+
 #retweet:hover {
   color: rgb(212, 191, 52);
 }
+
 #heart:hover {
   color: rgb(212, 191, 52);
 }
