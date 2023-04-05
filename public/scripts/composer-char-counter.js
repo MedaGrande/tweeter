@@ -10,11 +10,10 @@ $(document).ready(function() {
     } else {
       characterLeft = maxCharacterAllowed - text.length;
     } //counter changes color if character exceeds max
+    $(".counter").html(characterLeft);
     if (characterLeft < 0) {
-      $(".counter").html(characterLeft);
       $(".counter").css("color", "red");
     } else {//counter color reverts to black as text is deleted
-      $(".counter").html(characterLeft);
       $(".counter").css("color", "rgb(67, 66, 66)");
     }
   });

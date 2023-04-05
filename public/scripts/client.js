@@ -15,13 +15,9 @@ $(document).ready(function() {
     //empty tweet check
     if ($("#tweet-text").val() === "") {
       $("#tweet-check").show();
-      $("#tweet-check").html("**Empty tweets cannot be submitted!");
-      $("#tweet-check").css("color", "red");
       //check for tweets exceeding permitted character count
     } else if ($("#count-down").val() < 0) {
       $("#char-check").show();
-      $("#char-check").html("**Tweet should not exceed 140 characters!");
-      $("#char-check").css("color", "red");
     } else {
       $.post("/tweets", serializedTweet)
       .then(() => {
@@ -46,7 +42,7 @@ const createTweetElement = function(tweetData) {
   </div>
   <h3>${tweetData.user.handle}</h3>
   </header>
-  <textarea>${tweetData.content.text}</textarea>
+  <textarea readonly="readonly">${tweetData.content.text}</textarea>
   <div class="line"></div>
   <footer>
   <span>${timeago.format(tweetData.created_at)}</span>
