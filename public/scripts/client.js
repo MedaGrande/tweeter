@@ -72,8 +72,11 @@ const renderTweets = function(tweets) {
 //tweet post
 const loadTweets = function () {
   
-  $.ajax('/tweets', { method: 'GET' })
-  .then(function(tweets) {
+$.ajax('/tweets', { method: 'GET' })
+  .then(function (tweets) {
     renderTweets(tweets);
-    });
+  })
+  .fail(function () {
+    alert("error");
+  })
 };
