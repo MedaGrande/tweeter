@@ -39,8 +39,9 @@ textarea {
 }
 
 .avatar {
-  width: 80px;
-  height: 100%;
+  width: 70px;
+  height: 90%;
+  padding-top: 10px;
 }
 
 .statement {
@@ -76,6 +77,18 @@ footer p span{
   flex-direction: row;
   flex-grow: 5;
   justify-content: end;
+}
+
+#flag {
+  padding-right: 10px;
+}
+
+#retweet {
+  padding-right: 10px;
+}
+
+#heart {
+  padding-right: 10px;
 }
 
 article:hover {
